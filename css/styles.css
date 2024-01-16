@@ -516,6 +516,10 @@ label {
   margin-right: 120px;
 }
 
+.footer-form {
+  gap: 24px;
+}
+
 .footer-form-label {
   color: #fff;
   font-size: 16px;
@@ -524,6 +528,11 @@ label {
   letter-spacing: 0.02em;
   margin-bottom: 16px;
 }
+
+.form-button {
+  display: flex;
+}
+
 .footer-form-email {
   width: 264px;
   height: 40px;
@@ -531,23 +540,23 @@ label {
   border: 1px solid #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   outline: none;
-  padding: 8px 16px;
+  padding-left: 16px;
   background-color: transparent;
   color: #fff;
   margin-right: 24px;
-}
-
-.footer-form-email::placeholder {
-  color: #fff;
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
 }
 
+.footer-form-email::placeholder {
+  color: #fff;
+}
+
 .footer-form-button {
   color: #fff;
   text-align: start;
-  font-family: inherit;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -555,16 +564,16 @@ label {
   border-radius: 4px;
   background: #4d5ae5;
   border: none;
-  position: relative;
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 .footer-form-icon {
-  position: absolute;
-  top: 50%;
-  right: 24px;
-  transform: translateY(-50%);
+  margin-left: 16px;
 }
 
 .backdrop {
@@ -575,6 +584,8 @@ label {
   background-color: rgba(46, 47, 66, 0.4);
   transform: translateX(100%);
   overflow: hidden;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-open {
@@ -593,7 +604,8 @@ label {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-button {
@@ -607,10 +619,26 @@ label {
   position: absolute;
   top: 24px;
   right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  background-color: #404bbf;
+  border: none;
+  fill: #ffffff;
+}
+
+.icon-close {
+  ransition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-title {
-  margin: 48px auto 16px;
+  margin: 0 auto 16px;
   text-align: center;
   color: #2e2f42;
   font-size: 16px;
@@ -628,7 +656,7 @@ label {
 .form-label {
   color: #8e8f99;
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   margin-bottom: 4px;
 }
@@ -638,8 +666,10 @@ label {
   height: 40px;
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
-  padding: 11px 34px;
-  outline: none;
+  padding-left: 38px;
+  outline: transparent;
+  background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus-within {
@@ -656,7 +686,7 @@ label {
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
-  transition: fill;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-icon-area:focus-within {
@@ -673,7 +703,13 @@ label {
   padding: 8px 16px;
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
-  outline: none;
+  outline: transparent;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-textarea:focus-within {
@@ -692,7 +728,7 @@ label {
   align-items: center;
   margin-bottom: 24px;
 }
-.form-checkbox {
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -710,14 +746,31 @@ label {
   stroke-width: 1px;
   stroke: rgba(46, 47, 66, 0.4);
   margin-right: 8px;
+  width: 10px;
+  height: 8px;
+}
+
+.form-checkbox-span {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
 }
 
 .checkbox-label {
   display: inline-block;
   color: #8e8f99;
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
+  color: #8e8f99;
 }
 
 .checkbox-link {
@@ -743,6 +796,8 @@ label {
   line-height: 1.5;
   letter-spacing: 0.04em;
   border: none;
-  width: 159px;
+  min-width: 169px;
   height: 56px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
