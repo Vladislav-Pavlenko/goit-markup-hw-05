@@ -517,6 +517,7 @@ label {
 }
 
 .footer-form {
+  display: flex;
   gap: 24px;
 }
 
@@ -748,6 +749,7 @@ label {
   margin-right: 8px;
   width: 10px;
   height: 8px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-checkbox-span {
