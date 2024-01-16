@@ -775,7 +775,7 @@ label {
   color: #8e8f99;
 }
 
-.form-checkbox[type="checkbox"]:checked span {
+.form-checkbox:checked span {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
