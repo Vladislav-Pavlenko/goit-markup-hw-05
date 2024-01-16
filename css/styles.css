@@ -775,6 +775,11 @@ label {
   color: #8e8f99;
 }
 
+.form-checkbox[type="checkbox"]:checked span {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
 .checkbox-link {
   color: #4d5ae5;
   font-size: 12px;
